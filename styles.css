@@ -37,11 +37,20 @@ body {
   top: 50%;
   left: 50%;
   border-radius: 15px;
-  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.2);
   width: 100%;
   max-width: 480px;
   padding: 40px 30px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.06);
+  transition: opacity 0.2s 0s ease-in-out, transform 0.2s 0s ease-in-out;
+}
+
+.wrapper.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .wrapper .content,
